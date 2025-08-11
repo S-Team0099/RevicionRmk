@@ -1,57 +1,809 @@
-<!-- /movistar/index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claro | Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/14025/14025272.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claro | Planes</title>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
-<body class="menu-principal">
-  <div class="contenido-total">
-    <!-- Encabezado llamativo -->
-    <header class="header-movistar">
-      <h1>Bienvenido a Claro</h1>
-      <p class="slogan">Nuestros colores nos unen en todas las canchas</p>
-    </header>
+<body>
+  <header class="header-claro">
+    <h1>Buscar Planes Postpago</h1>
+    <p class="slogan">Elige entre los mejores planes móviles</p>
+  </header>
+
+  <!-- Solo visible en móvil -->
+  <div class="mobile-only buscador-container">
+    <input type="text" id="buscador" placeholder="Ingresa el monto del plan">
+  </div>
 
 
-    <!-- Tarjetas de navegación visualmente mejoradas -->
-    <section class="tarjetas-menu">
-      <a href="facturacion/" class="tarjeta tarjeta-iconica animada">
-        <div class="icon-container gradient-icon">
-          <img src="../img/icono/facturacionclaro.png" alt="Ciclo" class="icon-img">
-        </div>
-        <span>Ciclo de Facturación</span>
-      </a>
-      <a href="planes/" class="tarjeta tarjeta-iconica animada">
-        <div class="icon-container gradient-icon">
-          <img src="../img/icono/planesclaro.png" alt="Planes" class="icon-img">
-        </div>
-        <span>Planes Actualizados</span>
-      </a>
-      <a href="beneficios/" class="tarjeta tarjeta-iconica animada">
-        <div class="icon-container gradient-icon">
-          <img src="../img/icono/beneficiosclaro.png" alt="Beneficios" class="icon-img">
-        </div>
-        <span>Beneficios RMK</span>
-      </a>
+  <div class="main-wrapper">
 
-    </section>
+    <div class="carousel">
+      <!--TARJETA DE PLANES -->
+
+      <!-- Plan 29.90 -->
+      <div class="plan-card" data-precio="29.90">
+        <div class="top-banner">CÁMBIATE O RENUEVA Y DUPLICA TUS GIGAS</div>
+        <div class="plan-header">
+          <img src="../../img/icono/max.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/29.90</div>
+        </div>
+        <div class="plan-title">REDES SOCIALES</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas del plan</div>
+            <div class="value">10 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas con Full Claro</div>
+            <div class="value red">12.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label2">Redes Sociales</div>
+            <div class="value plan-icons">
+              <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" />
+              <img src="https://cdn-icons-png.flaticon.com/128/733/733558.png" alt="Instagram" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5626/5626376.png" alt="thread" />
+              <img src="https://cdn-icons-png.flaticon.com/128/1384/1384055.png" alt="WhatsApp" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Zona Andina y Zona <br> América</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>10</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span class="claro-red">Claro
+                </span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span class="claro-red">Claro
+                </span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal1">Saber más</a>
+          <a href="WhatsApp/index.html" class="btn-tienda">
+            <i class="fas fa-store"></i> Tienda online
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Plan MAX 39.90 -->
+      <div class="plan-card" data-precio="39.90">
+        <div class="top-banner">CÁMBIATE O RENUEVA Y DUPLICA TUS GIGAS</div>
+        <div class="plan-header">
+          <img src="../../img/icono/max.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/39.90</div>
+        </div>
+        <div class="plan-title">REDES SOCIALES</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas del plan</div>
+            <div class="value">25 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas con Full Claro</div>
+            <div class="value red">37.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label2">Redes sociales</div>
+            <div class="value plan-icons">
+              <img src="https://cdn-icons-png.flaticon.com/128/732/732257.png" alt="Waze" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" />
+              <img src="https://cdn-icons-png.flaticon.com/128/733/733558.png" alt="Instagram" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5626/5626376.png" alt="thread" />
+              <img src="https://cdn-icons-png.flaticon.com/128/1384/1384055.png" alt="WhatsApp" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Zona Andina y Zona <br> América</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>10</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal2">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 49.90 -->
+      <div class="plan-card" data-precio="49.90">
+        <div class="top-banner">CÁMBIATE Y OBTÉN 30GB ADICIONALES </div>
+        <div class="plan-header">
+          <img src="../../img/icono/max.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/49.90</div>
+        </div>
+        <div class="plan-title">REDES SOCIALES</div>
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas del plan</div>
+            <div class="value">45 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas con Full Claro</div>
+            <div class="value red">67.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label2">Redes ilimitadas</div>
+            <div class="value plan-icons">
+              <img src="https://cdn-icons-png.flaticon.com/128/732/732257.png" alt="Waze" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" />
+              <img src="https://cdn-icons-png.flaticon.com/128/733/733558.png" alt="Instagram" />
+              <img src="https://cdn-icons-png.flaticon.com/128/2111/2111402.png" alt="Messenger" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5626/5626376.png" alt="thread" />
+              <img src="https://cdn-icons-png.flaticon.com/128/1384/1384055.png" alt="WhatsApp" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Zona Andina y Zona <br> América</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal3">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 55.90 -->
+      <div class="plan-card" data-precio="55.90">
+        <div class="top-banner">CÁMBIATE Y OBTÉN 30GB ADICIONALES</div>
+        <div class="plan-header">
+          <img src="../../img/icono/max.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/55.90</div>
+        </div>
+        <div class="plan-title">REDES SOCIALES</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas del plan</div>
+            <div class="value">75 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas con Full Claro</div>
+            <div class="value red">112.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label2">Redes Ilimitadas</div>
+            <div class="value plan-icons">
+              <img src="https://cdn-icons-png.flaticon.com/128/732/732257.png" alt="Waze" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" />
+              <img src="https://cdn-icons-png.flaticon.com/128/733/733558.png" alt="Instagram" />
+              <img src="https://cdn-icons-png.flaticon.com/128/2111/2111402.png" alt="Messenger" />
+              <img src="https://cdn-icons-png.flaticon.com/128/5626/5626376.png" alt="thread" />
+              <img src="https://cdn-icons-png.flaticon.com/128/1384/1384055.png" alt="WhatsApp" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Zona Andina y Zona <br> América</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal4">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 69.90 -->
+      <div class="plan-card" data-precio="69.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 6 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/69.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">110 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">165 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal5">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 79.90 -->
+      <div class="plan-card" data-precio="79.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/79.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">125 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">187.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal6">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 95.90 -->
+      <div class="plan-card" data-precio="95.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/95.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">135 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">202.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal7">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 109.90 -->
+      <div class="plan-card" data-precio="109.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/109.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">160 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">240 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal8">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 159.90 -->
+      <div class="plan-card" data-precio="159.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/159.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">175 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">262.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal9">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 189.90 -->
+      <div class="plan-card" data-precio="189.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/189.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">185 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">277.5 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal10">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+      <!-- Plan MAX 289.90 -->
+      <div class="plan-card" data-precio="289.90">
+        <div class="top-banner">¡ CÁMBIATE Y OBTÉN 50% DTO X 12 MESES !</div>
+        <div class="plan-header">
+          <img src="../../img/icono/maxilimitado.png" alt="Claro Max Logo" />
+          <div class="plan-price">S/289.90</div>
+        </div>
+        <div class="plan-title">TODO ILIMITADO</div>
+
+        <div class="plan-features">
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad del plan</div>
+            <div class="value">200 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Gigas en alta <br> velocidad con Full <br> Claro</div>
+            <div class="value red">300 GB</div>
+          </div>
+          <div class="item">
+            <div class="label">Llamadas y SMS</div>
+            <div class="value2">Ilimitadas</div>
+          </div>
+          <div class="item">
+            <div class="label">Cobertura <br> internacional</div>
+            <div class="value2">Latinoamérica,Zona <br> Andina, USA y Canadá</div>
+          </div>
+          <div class="subscription-section">
+            <div class="label">Suscripción gratuita</div>
+            <div class="subscription-content">
+              <div class="subscription-box">
+                <div class="red">Claro<span class="black"> video</span></div>
+                <div class="subscription-includes">Incluye:</div>
+                <img src="../../img/icono/paramount.png" alt="Paramount+" />
+                <div class="subscription-info"><strong>12</strong> canales locales</div>
+              </div>
+              <div class="subscription-bottom"><span class="red">Claro </span><span class="black">música</span></div>
+            </div>
+          </div>
+          <div class="plan-benefits">
+            <div class="benefit-row"><span class="label">Beneficios</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">club</span></span></div>
+            <div class="benefit-row"><span class="label">adicionales</span><span><span
+                  class="claro-red">Claro</span><span class="bold-black">drive</span></span></div>
+          </div>
+          <div class="plan-legal">*Aplica para planes contratados y activados en Distribuidor Autorizado <strong>Dac
+              Pare</strong></div>
+        </div>
+        <div class="plan-actions">
+          <a href="#" class="btn-ver-mas" data-modal="modal11">Saber más</a>
+          <a href="#" class="btn-tienda"><i class="fas fa-store"></i> Tienda online</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--MODAL DE PLANES -->
+    <!-- Modal del plan 29.90 -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 39.90 -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 49.90 -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 55.90 -->
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 69.90 -->
+    <div id="modal5" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 79.90 -->
+    <div id="modal6" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 95.90 -->
+    <div id="modal7" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 109.90 -->
+    <div id="modal8" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 159.90 -->
+    <div id="modal9" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 189.90 -->
+    <div id="modal10" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal del plan 69.90 -->
+    <div id="modal11" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title"></h3>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button class="btn-entendido">Entendido</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Botón para volver al inicio -->
     <div class="volver-inicio">
-      <a href="../index.html" class="btn-volver">
-        <img src="../img/icono/inicioclaro.png" alt="Inicio" class="icon-img"> Volver Atras
+      <a href="../../claro/index.html" class="btn-volver">
+        <img src="../../img/icono/inicioclaro.png" alt="Inicio" class="icon-img"> Volver Atras
       </a>
     </div>
 
     <script src="script.js"></script>
+
   </div>
+
 </body>
 
 </html>
