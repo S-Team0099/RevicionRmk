@@ -462,38 +462,29 @@ body {
   cursor: pointer;
 }
 
-/* ==========================================
-=           BOTÓN "VOLVER AL INICIO"        =
-========================================== */
+/* ===== BOTÓN "VOLVER AL INICIO" ===== */
 .volver-inicio {
-  position: fixed;
-  bottom: env(safe-area-inset-bottom, 2rem);
-  left: 0;
+  margin-top: auto;
   width: 100%;
-  background: transparent;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-  z-index: 999;
+  box-sizing: border-box;
 }
 
-/* Botón como tal */
 .btn-volver {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
   background-color: #ffffff;
-  color: #e60000;
-  /* Texto del botón en rojo */
+  color: #e60000; /* Texto del botón en rojo */
   font-weight: bold;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-  /* hacia arriba en lugar de abajo */
   border-radius: 30px;
   text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -502,12 +493,11 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(230, 0, 0, 0.3);
 }
-
 .icon-img {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
-
 /* ========== RESPONSIVE ========== */
 @media (max-width: 480px) {
   .plan-card {
@@ -621,25 +611,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
 
-  /* Botón "Volver al inicio" */
-  /* Botón "Volver al inicio" */
   .volver-inicio {
-    position: fixed;
-    bottom: 35px; /* más pegado al borde inferior */
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    z-index: 999;
-    width: auto; /* no ocupa todo el ancho */
+    padding: 2rem 0;
+    width: 100%;
   }
 
   .btn-volver {
-    padding: 0.6rem 1rem;
     font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
     text-align: center;
   }
 
@@ -701,6 +680,3 @@ body {
     opacity: 0 !important;
   }
 }
-
-
-
