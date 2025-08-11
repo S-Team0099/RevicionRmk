@@ -530,14 +530,12 @@ body {
 .mobile-only {
   display: none;
 }
-
 /* ======== Estilo para móviles ======== */
 @media (max-width: 768px) {
 
   /* ===== Header ===== */
   .header-claro {
-    padding-top: 10px;
-    padding-bottom: 8px;
+    padding: 10px 0 8px;
     text-align: center;
   }
 
@@ -547,7 +545,7 @@ body {
   }
 
   .header-claro .slogan {
-    margin: 4px 0 0 0;
+    margin: 6px 0 0;
     font-size: 0.9rem;
   }
 
@@ -561,8 +559,8 @@ body {
   .cards-container,
   .card-track {
     display: flex;
-    gap: 16px; /* separación entre tarjetas */
-    padding: 0 16px; /* aire lateral */
+    gap: 12px; /* espacio uniforme */
+    padding-inline: 16px; /* aire lateral */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -571,19 +569,18 @@ body {
   /* ===== Tarjeta individual ===== */
   .cards-container .card,
   .plan-card {
-    flex: 0 0 calc(100% - 48px); /* ocupa casi toda la pantalla */
-    max-width: calc(100% - 48px);
+    flex: 0 0 85%; /* ancho de tarjeta en móvil */
     scroll-snap-align: center;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
-  /* ===== Espacio lateral en carrusel ===== */
+  /* ===== Espacio lateral inicial y final ===== */
   .card-track::before,
   .card-track::after {
     content: '';
-    flex: 0 0 5%;
+    flex: 0 0 8%;
   }
 
   /* ===== Ocultar scrollbar ===== */
@@ -624,12 +621,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
 
-  /* ===== Botón volver ===== */
+  /* Botón "Volver al inicio" */
   .volver-inicio {
-    padding: 1.2rem 0;
+    position: fixed;
+    bottom: env(safe-area-inset-bottom, 1.2rem);
+    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    transform: none;
   }
 
   .btn-volver {
@@ -675,8 +673,7 @@ body {
 /* ===== Ajustes extra para móviles pequeños (<480px) ===== */
 @media (max-width: 480px) {
   .header-claro {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 8px 0;
   }
 
   .header-claro h1 {
@@ -685,5 +682,15 @@ body {
 
   .header-claro .slogan {
     font-size: 0.9rem;
+  }
+}
+
+/* ===== Ocultar flechas en móvil ===== */
+@media (max-width: 768px) {
+  .owl-next,
+  .owl-prev {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
