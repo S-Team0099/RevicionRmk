@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movistar | Ciclo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/14026/14026807.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="facturacion-page">
+
+  <header class="header-movistar">
+    <h1>Ciclo de Facturación</h1>
+    <p class="slogan">Consulta tu ciclo correspondiente.</p>
+  </header>
+
+
+  <main>
+    <div class="search-box">
+      <input type="number" id="buscador" placeholder="Ingrese el día de la activación (1-31)" min="1" max="31" />
+    </div>
+
+
+
+    <div class="alerta" id="mensaje-error">
+      ⚠️ Por favor, ingrese una fecha válida.
+    </div>
+
+    <div class="table-container" id="result-container" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Ciclos de facturación</th>
+            <th>Fecha de activación</th>
+            <th>Entrega de beneficio</th>
+            <th>fecha de Cierre de ciclo</th>
+            <th>Fecha de pago</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-ciclos"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Botón para volver al inicio -->
+  <div class="volver-inicio">
+    <a href="../index.html" class="btn-volver">
+      <img src="../../img/icono/inicio.png" class="icon-img" alt="Inicio"> Volver al Inicio
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

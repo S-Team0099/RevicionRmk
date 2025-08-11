@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ===== ANIMACIÓN ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BODY PRINCIPAL ===== */
+body.menu-principal {
+  min-height: 100dvh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+
+  /* Fondo rojo institucional + logo Claro */
+  background: url('../img/fondo/claro-logo.webp') no-repeat center center fixed;
+  background-size: 15% auto;
+  background-color: #e41c1d; /* Rojo institucional Claro */
+
+  color: #ffffff; /* Color de texto general, claro para fondo rojo */
+  box-sizing: border-box;
+  padding: 0 1rem;
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* ===== CONTENEDOR FLEXIBLE GENERAL ===== */
+.contenido-total {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ===== ENCABEZADO PRINCIPAL ===== */
+.header-movistar {
+  text-align: center;
+  background-color: #e41c1d; /* Rojo Claro */
+  color: #ffffff;            /* Texto blanco para contraste */
+  padding: 2rem 1rem 1rem;
+  width: 100%;
+}
+
+.slogan { 
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #ffeaea; /* Texto suave pero visible sobre fondo rojo */
+}
+
+/* ===== TARJETAS DE OPCIONES ===== */
+.tarjetas-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+/* ===== DISEÑO INDIVIDUAL DE CADA TARJETA ===== */
+.tarjeta.animada {
+  animation: fadeInUp 0.7s ease both;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(230, 0, 0, 0.15); /* sombra en tono rojo */
+  border: none;
+  padding: 1.2rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  color: #e60000; /* Rojo Claro */
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta.animada:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(230, 0, 0, 0.2);
+  background-color: #fff5f5; /* Suave fondo rosado */
+}
+
+/* ===== ICONOS DE LAS TARJETAS ===== */
+.icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ===== BOTÓN "VOLVER AL INICIO" ===== */
+.volver-inicio {
+  margin-top: auto;
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffff;
+  color: #e60000; /* Texto del botón en rojo */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #ffeaea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(230, 0, 0, 0.3);
+}
+
+/* ===== RESPONSIVE PARA MÓVILES ===== */
+@media (max-width: 768px) {
+  /* Ajustes para scroll vertical */
+  body.menu-principal {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 0;
+  }
+
+  /* Reorganiza estructura flexible */
+  .contenido-total {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100dvh;
+  }
+
+  /* Ajuste de encabezado */
+  .header-movistar {
+    padding: 1.5rem 1rem 1rem;
+  }
+  .header-movistar h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .header-movistar p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Tarjetas en columna para móviles */
+  .tarjetas-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 1.5rem auto;
+  }
+
+  .tarjeta.animada {
+    width: 90%;
+    max-width: 280px;
+    padding: 1.1rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+  }
+
+  .icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Botón adaptado a móviles */
+  .volver-inicio {
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  .btn-volver {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+  }
+}

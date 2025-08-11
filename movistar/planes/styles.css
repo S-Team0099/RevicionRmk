@@ -1,0 +1,776 @@
+/*============================================================
+= MOVISTAR PLANES POSTPAGO - CSS UNIFICADO                  =
+= Versión con mejoras para MOBILE:                          =
+=  - Cada desliz (slide) muestra **solo 1 tarjeta**          =
+=  - Se agrega **buscador sólo en móvil**                    =
+=  - Se corrige overflow horizontal (no se "sale" del viewport)
+=  - Ajustes tipográficos + espaciales responsive            =
+=  - Limpieza de estilos y comentarios                       =
+=============================================================*/
+
+/*=============================================
+=  IMPORTACIÓN DE FUENTES                     =
+=============================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/*=============================================
+=  RESET                                       =
+=============================================*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*=============================================
+=  ESTILOS BASE                                =
+=============================================*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1eb6e7;
+  /* Celeste Movistar */
+  color: #ffffff;
+  overflow-x: hidden;
+  /* Evita scroll lateral global */
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============================================
+=  HEADER                                      =
+=  (Incluye contenedor para buscador móvil)    =
+=============================================*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1eb6e7;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 1rem 1rem;
+  /* bottom se recalcula en mobile */
+  z-index: 1000;
+}
+
+h1.titulo {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;  /* ✨ Añade aire debajo del título */
+}
+
+p.subtitulo {
+  font-size: 1rem;
+  font-style: italic;
+  color: #e9f9ff;
+  margin-top: 0.5rem;      /* ✨ Añade espacio arriba del subtítulo */
+}
+
+
+/*---------------------------------------------
+  Buscador (se muestra SOLO en móvil)
+---------------------------------------------*/
+.search-mobile-wrapper {
+  display: none;
+  /* visible sólo vía media query */
+  width: 100%;
+  max-width: 480px;
+  margin: 0.75rem auto 0;
+}
+
+.search-mobile-wrapper input[type="text"] {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  /* pill */
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  color: #1eb6e7;
+  outline: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.search-mobile-wrapper input[type="text"]::placeholder {
+  color: #7acff0;
+}
+
+.search-mobile-wrapper input[type="text"]:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+  transform: scale(1.01);
+}
+
+/* Resultado vacío (opcional, oculto por defecto) */
+.search-no-results {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #fffb;
+}
+
+/*=============================================
+=  MAIN WRAPPER                               =
+=============================================*/
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  /* Header (~120px) + botón inferior (~80px) */
+  padding: 1rem;
+  margin-top: 120px;
+  /* espacio para header fijo; se recalcula mobile */
+}
+
+/*=============================================
+=  SLIDER + SCROLLBAR (DESKTOP BASE)          =
+=  En escritorio mantenemos carrusel horizontal
+=============================================*/
+.slider-wrapper {
+  position: relative;
+  max-width: calc(4 * 280px + 3 * 20px);
+  /* 4 tarjetas + gaps */
+  margin: 0 auto;
+  overflow: visible;
+  /* flechas fuera */
+}
+
+.slider-container {
+  max-width: calc(4 * 280px + 3 * 20px);
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE */
+  cursor: grab;
+  will-change: scroll-position;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-container.active {
+  cursor: grabbing;
+}
+
+/* Evitar selección de texto en slider */
+.slider-container,
+.slider-container * {
+  user-select: none;
+}
+
+/*=============================================
+=  CARD TRACK (fila de tarjetas)              =
+=============================================*/
+.card-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  /* ancho = suma tarjetas (desktop) */
+  scroll-snap-type: x proximity;
+  transition: transform 0.4s ease;
+  /* usado por script mobile */
+}
+
+/*=============================================
+=  TARJETAS (BOX)                              =
+=============================================*/
+.card-track .box {
+  flex: 0 0 280px;
+  /* base desktop */
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.box h2 {
+  font-size: 32px;
+  margin: 15px 0 5px;
+  color: #777;
+  font-weight: normal;
+  text-align: center;
+}
+
+/*=============================================
+=  PRECIO (TOP)                                =
+=============================================*/
+.precio-top,
+.precio-top-adicional {
+  position: relative;
+  width: 100%;
+  padding: 10px 10px 30px;
+  text-align: center;
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+}
+
+.precio-top {
+  background-color: #0b2739;
+}
+
+.precio-top-adicional {
+  background-color: #ff2c91;
+}
+
+.precio-top .plan,
+.precio-top-adicional .plan {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.precio-top h3,
+.precio-top-adicional h3 {
+  font-size: 20px;
+}
+
+.precio-top h3 span,
+.precio-top-adicional h3 span {
+  font-size: 32px;
+}
+
+/* Etiquetas bajo el precio */
+.precio-top .tag,
+.precio-top-adicional .tag {
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.precio-top .tag {
+  background-color: #ff2c91;
+}
+
+.precio-top-adicional .tag {
+  background-color: #1ebd4c;
+}
+
+/*=============================================
+=  CONTENEDOR DE APPS                          =
+=============================================*/
+.apps-container {
+  background: #f5f5f5;
+  width: 90%;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.apps {
+  font-size: 12px;
+  color: #474a4b;
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.icons .app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: #444;
+}
+
+.icons .app img {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+}
+
+/*=============================================
+=  INFORMACIÓN EXTRA                           =
+=============================================*/
+.extra-info {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 12px;
+  width: 90%;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.extra-info span {
+  display: block;
+  margin-top: 8px;
+}
+
+/*=============================================
+=  ACCIONES / BOTONES                          =
+=============================================*/
+.acciones {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn.blue {
+  background-color: #00aeff;
+  color: #fff;
+}
+
+.btn.green {
+  background-color: #fff;
+  color: #1ebd4c;
+  border: 1px solid #1ebd4c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn.green img {
+  width: 18px;
+  height: 18px;
+}
+
+.delivery {
+  font-size: 11px;
+  font-style: italic;
+  color: #007bff;
+  text-align: center;
+}
+
+/*=============================================
+=  BOTÓN "VER BENEFICIOS"                     =
+=============================================*/
+.btn-beneficios {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 15px;
+}
+
+/*=============================================
+=  MODAL                                       =
+=============================================*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  /* top, right, bottom, left = 0 */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  /* Corregido: eliminamos padding para ancho completo en móvil */
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 700px;
+  /* Tamaño modal en desktop */
+  width: 95%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+/* Título del modal */
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  padding: 15px 20px 10px;
+  margin: 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Botón X (cerrar) */
+.modal .close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+/* Cuerpo con scroll */
+.modal-body {
+  padding: 10px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body ul {
+  list-style-type: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.modal-body li {
+  margin-bottom: 6px;
+  line-height: 1.3;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Footer + botón "Entendido" */
+.modal-footer {
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-entendido {
+  padding: 8px 20px;
+  background-color:#007bff;
+;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  /* Botón tipo píldora */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: auto;
+}
+
+.btn-entendido:hover {
+  background-color: #007bff;
+}
+
+/*=============================================
+=  ANIMACIONES                                 =
+=============================================*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=============================================
+=  BOTÓN "VOLVER AL INICIO"                    =
+=============================================*/
+.volver-inicio {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 1.2rem);
+  left: 0;
+  width: 100%;
+  background: #1eb6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #1eb6e7;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  text-decoration: none !important;
+}
+
+.btn-volver:hover {
+  background: #e6f9fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 128, 192, 0.3);
+}
+
+.icon-img {
+  width: 28px;
+  height: 28px;
+}
+
+/*=============================================
+=  FLECHAS CARRUSEL (DESKTOP)                  =
+=============================================*/
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  color: #1eb6e7;
+  border: 1px solid #1eb6e7;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.arrow.prev {
+  left: -48px;
+}
+
+.arrow.next {
+  right: -48px;
+}
+
+.arrow:hover,
+.arrow:focus {
+  background: #1eb6e7;
+  color: #fff;
+  transform: translateY(-50%) scale(1.05);
+  outline: none;
+}
+
+@media (min-width: 769px) {
+
+  html,
+  body {
+    overflow-y: hidden;
+  }
+
+  main {
+    height: calc(100vh - 200px);
+    /* asegúrate que el main ocupe el alto de la pantalla */
+    overflow-y: hidden;
+  }
+}
+
+/*============================================================
+=  RESPONSIVE BREAKPOINTS                                     =
+=  *Móvil <= 768px*                                            =
+=  Reglas clave para:                                          =
+=    - Mostrar 1 tarjeta a la vez                             =
+=    - Activar buscador                                        =
+=    - Ocultar flechas exteriores                              =
+=============================================================*/
+/*============================================================
+=  BREAKPOINT <= 768px - Ajustes para Tablets y Móviles      =
+=============================================================*/
+@media (max-width: 768px) {
+
+  /* Header: más espacio para el buscador */
+  header {
+    padding: 1rem 1rem 1.5rem;
+    /* espacio inferior para input */
+  }
+
+  h1.titulo {
+    font-size: 1.6rem;
+  }
+
+  p.subtitulo {
+    font-size: 0.85rem;
+  }
+
+  /* Mostrar buscador móvil */
+  .search-mobile-wrapper {
+    display: block;
+  }
+
+  /* Main: header más alto => margen superior mayor */
+  main {
+    margin-top: 130px;
+    min-height: calc(100vh - 220px);
+  }
+
+  /* Slider: convertir en visor 1x1 (una tarjeta visible) */
+  .slider-wrapper {
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* evita desbordes */
+  }
+
+  .slider-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 1rem;
+    /* espacio lateral en móvil */
+    overflow: hidden;
+    /* removemos scroll-x manual */
+    scroll-snap-type: none;
+    /* controlado por JS */
+    cursor: default;
+    /* sin arrastre */
+  }
+
+  .card-track {
+    width: 100%;
+    gap: 0;
+    /* sin espacio entre tarjetas */
+    display: flex;
+    transform: translateX(0);
+    /* JS moverá */
+  }
+
+  .card-track .box {
+    flex: 0 0 auto;
+    /* ocupa todo el viewport */
+    max-width: 420px;
+    /* límite visual */
+    margin: 0 auto;
+    /* centra la tarjeta */
+    scroll-snap-align: center;
+  }
+
+  /* Ocultar flechas externas para evitar desbordes */
+  .arrow {
+    display: none;
+  }
+
+  /* ================= MODAL ================= */
+
+  .modal-content {
+    width: 95% !important;
+    /* Forzamos el ancho completo */
+    max-width: 95% !important;
+    /* Ignora cualquier limitación previa */
+    height: auto;
+    margin: 0 !important;
+    /* Sin margen para que se pegue a los bordes */
+    border-radius: 30px !important;
+    /* Sin bordes redondeados (opcional) */
+    padding: 20px 15px;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
+  }
+}
+
+/* Botón "Volver al inicio" */
+.volver-inicio {
+  position: fixed;
+  /* Siempre visible */
+  bottom: env(safe-area-inset-bottom, 1.2rem);
+  left: 0;
+  width: 100%;
+  transform: none;
+  /* Elimina transform heredado */
+}
+
+/*============================================================
+=  BREAKPOINT <= 480px - Ajustes para móviles pequeños       =
+=============================================================*/
+@media (max-width: 480px) {
+  h1.titulo {
+    font-size: 1.45rem;
+  }
+
+  p.subtitulo {
+    font-size: 0.8rem;
+  }
+
+  /* Buscador */
+  .search-mobile-wrapper input[type="text"] {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Botones y textos */
+  .btn {
+    font-size: 13px;
+  }
+
+  .btn-beneficios {
+    font-size: 12px;
+  }
+
+  .apps {
+    font-size: 11px;
+  }
+
+  .extra-info {
+    font-size: 11px;
+  }
+}
+
+/*============================================================
+=  BREAKPOINT <= 360px - Ajustes para pantallas muy pequeñas =
+=============================================================*/
+@media (max-width: 360px) {
+  h1.titulo {
+    font-size: 1.35rem;
+  }
+
+  /* Buscador */
+  .search-mobile-wrapper input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  /* Botón volver */
+  .btn-volver {
+    font-size: 0.95rem;
+    padding: 0.65rem 1.25rem;
+  }
+}

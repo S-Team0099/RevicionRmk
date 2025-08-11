@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Claro - WhatsApp</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Alerta Modal -->
+  <div id="alertaOverlay" class="overlay">
+    <div class="alertaBox">
+      <p id="alertaMensaje">Este es un mensaje de alerta</p>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2 class="form-title">FORMULARIO DE EVALUACIÓN</h2>
+    <form id="whatsappForm">
+
+      <label for="tipoModalidad">Modalidad:</label>
+      <select id="tipoModalidad" name="tipoModalidad" required>
+        <option value="" disabled selected>-- Seleccionar tipo de portabilidad --</option>
+        <option value="Portabilidad Postpago">Portabilidad Postpago</option>
+        <option value="Portabilidad Prepago">Portabilidad Prepago</option>
+        <option value="Alta Postpago">Alta Postpago</option>
+      </select>
+
+      <div id="mensaje-bienvenida" class="mensaje-bienvenida">
+        <strong>¡Bienvenido!</strong> Completa este formulario para concretar tu venta. <strong>Dac Pare</strong>
+      </div>
+
+      <div class="campo" data-mode="portabilidad,alta">
+        <label>DNI:</label>
+        <input type="number" name="dni" placeholder="Ingrese DNI del cliente">
+      </div>
+
+      <div class="campo" data-mode="portabilidad,alta">
+        <label>Nombre completo del cliente:</label>
+        <input type="text" name="nombre" placeholder="Ingrese nombre y apellidos">
+      </div>
+
+      <div class="campo" data-mode="portabilidad">
+        <label>Número de celular:</label>
+        <input type="number" name="numero" placeholder="Ingrese número de celular">
+      </div>
+
+      <div class="campo" data-mode="portabilidad">
+        <label for="operador">Operador actual:</label>
+        <select id="operador" name="operador">
+          <option value="" disabled selected>-- Selecciona un operador --</option>
+          <option value="Movistar">Movistar</option>
+          <option value="Bitel">Bitel</option>
+          <option value="Entel">Entel</option>
+        </select>
+      </div>
+
+      <div class="campo" data-mode="portabilidad">
+        <label for="tipoPortabilidad">Tipo de portabilidad:</label>
+        <select id="tipoPortabilidad" name="tipoPortabilidad">
+          <option value="" disabled selected>-- Selecciona el tipo de portabilidad --</option>
+          <option value="Postpago a Postpago">Postpago a Postpago</option>
+          <option value="Prepago a Postpago">Prepago a Postpago</option>
+          <option value="Postpago a Prepago">Postpago a Prepago</option>
+          <option value="Prepago a Prepago">Prepago a Prepago</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="plan">Plan a contratar:</label>
+        <select name="plan" id="plan">
+          <option value="" disabled selected>-- Selecciona un plan --</option>
+          <option value="29.90">S/ 29.90</option>
+          <option value="39.90">S/ 39.90</option>
+          <option value="49.90">S/ 49.90</option>
+          <option value="55.90">S/ 55.90</option>
+          <option value="69.90">S/ 69.90</option>
+          <option value="79.90">S/ 79.90</option>
+          <option value="95.90">S/ 95.90</option>
+          <option value="109.90">S/ 109.90</option>
+          <option value="159.90">S/ 159.90</option>
+          <option value="189.90">S/ 189.90</option>
+          <option value="289.90">S/ 289.90</option>
+        </select>
+
+        <!-- Único contenedor para mostrar mensaje de descuento -->
+        <div id="mensaje-descuento"></div>
+      </div>
+
+      <div class="campo" data-mode="portabilidad,alta">
+        <label>Correo electrónico:</label>
+        <input type="email" name="correo" placeholder="Ingrese correo electrónico">
+      </div>
+
+      <div class="campo" data-mode="portabilidad,alta">
+        <label>ICCID:</label>
+        <input type="number" name="iccid" placeholder="Ingrese código ICCID de la SIM">
+      </div>
+
+      <div class="campo" data-mode="portabilidad,alta">
+        <label>Dirección exacta:</label>
+        <textarea name="direccion" placeholder="Ingrese dirección completa del cliente"></textarea>
+      </div>
+
+      <div class="botones-container">
+        <a href="../index.html" class="btn-volver">
+          <img src="../../../img/icono/inicioclaro.png" class="icon-img" alt="Inicio">
+          Volver a Planes
+        </a>
+
+        <button type="submit" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+
+  <!-- Botón para volver al inicio -->
+
+</body>
+
+
+</html>

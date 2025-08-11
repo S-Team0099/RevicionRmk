@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movistar | Planes</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/7508/7508958.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="titulo">Buscar Planes Postpago</h1>
+    <p class="subtitulo">Elige entre los mejores planes móviles</p>
+    <div class="search-mobile-wrapper">
+      <input type="text" id="planSearch" placeholder="Buscar plan (GB, precio, nombre)..." autocomplete="off" />
+      <div id="noResultsMsg" class="search-no-results">No se encontraron planes.</div>
+    </div>
+  </header>
+  <main>
+
+    <!-- INICIA EL CARRUSEL CON FLECHAS -->
+    <section class="slider-wrapper">
+      <!-- Flecha “anterior” -->
+      <button class="arrow prev" aria-label="Anterior">‹</button>
+
+      <!-- Contenedor de scroll -->
+      <div class="slider-container">
+        <div class="card-track">
+
+          <!-- Plan 29.90 -->
+          <div class="box" data-nombre="Plan Control" data-precio="29.90" data-gigas="10GB">
+            <div class="precio-top">
+              <p class="plan">Plan Control</p>
+              <h3><span>S/ 29.90</span> al mes</h3>
+              <div class="tag"><i class="fas fa-gift"></i> Bono 30 GB x 6 meses</div>
+            </div>
+            <h2>10 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"alt="Instagram" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div></div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal1')">Ver más beneficios</button>
+          </div>
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal1')">&times;</span>
+              <h3>Plan Control 29.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal1')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 39.90 -->
+          <div class="box" data-nombre="Plan Control" data-precio="39.90" data-gigas="25GB">
+            <div class="precio-top">
+              <p class="plan">Plan Control</p>
+              <h3><span>S/ 39.90</span> al mes</h3>
+              <div class="tag"><i class="fas fa-gift"></i> Bono 30 GB x 6 meses</div>
+            </div>
+            <h2>25 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"alt="Instagram" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal2')">Ver más beneficios</button>
+          </div>
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal2')">&times;</span>
+              <h3>Plan Control 39.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal2')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Plan 39.90 Línea Adicional -->
+          <div class="box" data-nombre="Plan Adicional" data-precio="39.90" data-gigas="120GB">
+            <div class="precio-top-adicional">
+              <p class="plan">Plan Adicional</p>
+              <h3><span>S/ 39.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>120 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal3')">Ver más beneficios</button>
+          </div>
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal3')">&times;</span>
+              <h3>Plan Adicional 39.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal3')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 49.90 -->
+          <div class="box" data-nombre="Plan Control" data-precio="49.90" data-gigas="40GB">
+            <div class="precio-top">
+              <p class="plan">Plan Control</p>
+              <h3><span>S/ 49.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>40 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal4')">Ver más beneficios</button>
+          </div>
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal4')">&times;</span>
+              <h3>Plan Control 49.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal4')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 59.90 -->
+          <div class="box" data-nombre="Plan Control" data-precio="59.90" data-gigas="75GB">
+            <div class="precio-top">
+              <p class="plan">Plan Control</p>
+              <h3><span>S/ 59.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>75 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" />Fotos</div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal5')">Ver más beneficios</button>
+          </div>
+          <div id="modal5" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal5')">&times;</span>
+              <h3>Plan Control 59.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal5')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 69.90 -->
+          <div class="box" data-nombre="Plan Postpago" data-precio="69.90" data-gigas="100GB">
+            <div class="precio-top">
+              <p class="plan">Plan Postpago</p>
+              <h3><span>S/ 69.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>100 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal6')">Ver más beneficios</button>
+          </div>
+          <div id="modal6" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal6')">&times;</span>
+              <h3>Plan Postpago 69.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal6')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 79.90 -->
+          <div class="box" data-nombre="Plan Postpago" data-precio="79.90" data-gigas="120GB">
+            <div class="precio-top">
+              <p class="plan">Plan Postpago</p>
+              <h3><span>S/ 79.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>120 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal7')">Ver más beneficios</button>
+          </div>
+          <div id="modal7" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal7')">&times;</span>
+              <h3>Plan Postpago 39.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal7')">Entendido</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan 99.90 -->
+          <div class="box" data-nombre="Plan Postpago" data-precio="99.90" data-gigas="135GB">
+            <div class="precio-top">
+              <p class="plan">Plan Postpago</p>
+              <h3><span>S/ 99.90</span> al mes</h3>
+              <div class="tag">Exclusivo Línea Adicional</div>
+            </div>
+            <h2>135 GB</h2>
+            <div class="apps-container">
+              <p class="apps">Apps ilimitadas x 12 meses*</p>
+              <div class="icons">
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/889/889101.png" alt="Messenger" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" /></div>
+                <div class="app"><img src="https://cdn-icons-png.flaticon.com/128/3800/3800043.png" alt="Waze" /></div>
+              </div>
+            </div>
+            <div class="acciones">
+              <button class="btn blue">Te llamamos</button>
+              <a href="https://wa.me/51986448106" target="_blank" class="btn green">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" /> Compra por WhatsApp
+              </a>
+              <p class="delivery">¡Delivery express gratis!</p>
+            </div>
+            <button class="btn-beneficios" onclick="openModal('modal8')">Ver más beneficios</button>
+          </div>
+          <div id="modal8" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('modal8')">&times;</span>
+              <h3>Plan Postpago 99.90</h3>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button class="btn-entendido" onclick="closeModal('modal8')">Entendido</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow next" aria-label="Siguiente">›</button>
+    </section> <!-- /.slider-wrapper -->
+  </main>
+
+  <div class="volver-inicio">
+    <a href="../index.html" class="btn-volver">
+      <img src="../../img/icono/inicio.png" class="icon-img" alt="Inicio" /> Volver al Inicio
+    </a>
+  </div>
+</body>
+
+</html>

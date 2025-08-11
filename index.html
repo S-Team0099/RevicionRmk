@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telco Rmk</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/9115/9115472.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="menu-principal">
+
+  <!-- Hora y Fecha -->
+  <p id="hora-actual" class="hora"></p>
+  <p id="fecha-actual" class="fecha"></p>
+
+  <!-- Título Principal -->
+  <h1 class="titulo-principal">Telecomunicaciones RMK</h1>
+  <p class="subtitulo">Consulta ciclos de facturación, planes y bonos de cada operador.</p>
+  <p class="texto-guia">Selecciona tu operador:</p>
+
+  <!-- Botones de operadores -->
+  <div class="opciones">
+    <a href="movistar/" class="tarjeta movistar" aria-label="Ir a Movistar">
+      <img src="img/movistar-logo.webp" alt="Movistar" />
+    </a>
+    <a href="claro/" class="tarjeta claro" aria-label="Ir a Claro">
+      <img src="img/claro-logo.webp" alt="Claro" />
+    </a>
+    <a href="bitel/" class="tarjeta bitel" aria-label="Ir a Bitel">
+      <img src="img/bitel-logo.webp" alt="Bitel" />
+    </a>
+  </div>
+
+<!-- Sección OSIPTEL (solo visible en web) -->
+<div class="web-only">
+  <p class="texto-guia">Consultas OSIPTEL:</p>
+  <div class="opciones osiptel-botones">
+    <a href="https://serviciosweb.osiptel.gob.pe/SICBAM" target="_blank" class="tarjeta osiptel osiptel-baja" aria-label="Baja de línea">
+      <i class="fas fa-user-slash"></i><span>Baja</span>
+    </a>
+    <a href="https://checatuimei.renteseg.osiptel.gob.pe/consultaIMEI.xhtml" target="_blank" class="tarjeta osiptel osiptel-imei" aria-label="Consultar IMEI">
+      <i class="fas fa-mobile-alt"></i><span>IMEI</span>
+    </a>
+    <a href="https://checatuslineas.osiptel.gob.pe/" target="_blank" class="tarjeta osiptel osiptel-lineas" aria-label="Consultar líneas">
+      <i class="fas fa-users"></i><span>Líneas</span>
+    </a>
+    <a href="https://consulta.portabilidad.pe/" target="_blank" class="tarjeta osiptel osiptel-portabilidad" aria-label="Consultar portabilidad">
+      <i class="fas fa-random"></i><span>Fecha Act.</span>
+    </a>
+    <a href="https://checatusenal.osiptel.gob.pe/" target="_blank" class="tarjeta osiptel osiptel-senal" aria-label="Reclamar señal">
+      <i class="fas fa-signal"></i><span>Señal</span>
+    </a>
+    <a href="https://checatucaso.osiptel.gob.pe/#/autentica" target="_blank" class="tarjeta osiptel osiptel-caso" aria-label="Estado de caso">
+      <i class="fas fa-file-alt"></i><span>Caso</span>
+    </a>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Todos los derechos reservados. @shuincho
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

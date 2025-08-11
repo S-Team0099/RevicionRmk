@@ -1,0 +1,724 @@
+/*=============================================
+=  IMPORTACIÓN DE FUENTES                     =
+=============================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ----------------------------------------- */
+/* 🧱 Reset de box-sizing para todos los elementos */
+/* ----------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Incluye padding y borde dentro del tamaño definido */
+  margin: 0;
+  /* Elimina márgenes predeterminados */
+  padding: 0;
+  /* Elimina padding predeterminado */
+}
+
+/* ----------------------------------------- */
+/* 🧍 Estilos generales del body y html */
+/* ----------------------------------------- */
+html,
+body {
+  background-color: #1eb6e7;
+  /* Color de fondo azul */
+  background-size: cover;
+  /* Ajuste para fondo con imagen */
+  font-family: 'Poppins', 'Lato', Arial, sans-serif;
+  /* Prioridad de fuentes */
+  color: #9E9E9E;
+  /* Color de texto base gris claro */
+  height: 100%;
+  /* Altura completa del viewport */
+  overflow-x: hidden;
+  /* Oculta scroll horizontal */
+  overflow-y: auto;
+  /* Habilita scroll vertical si se necesita */
+  max-width: 100%;
+  /* Previene desbordamiento horizontal */
+  overscroll-behavior-y: contain;
+  /* Evita rebote al hacer scroll en móviles */
+  -webkit-overflow-scrolling: touch;
+  /* Scroll más fluido en iOS */
+  padding: 0;
+}
+
+/* ----------------------------------------- */
+/* 🔝 Encabezado fijo superior con título y subtítulo */
+/* ----------------------------------------- */
+header {
+  position: fixed;
+  /* Fijo en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Ocupa todo el ancho */
+  background-color: #1eb6e7;
+  /* Mismo fondo que el body */
+  color: #fff;
+  /* Texto blanco */
+  text-align: center;
+  padding: 1.2rem 1rem 1rem;
+  /* Espaciado interno */
+  z-index: 1000;
+  /* Encima de otros elementos */
+}
+
+h1.titulo {
+  font-size: 2rem;
+  /* Tamaño de fuente grande */
+  font-weight: 600;
+  /* Negrita media */
+  margin: 1rem 0 1.5rem;
+}
+
+p.subtitulo {
+  font-style: italic;
+  /* Estilo cursiva */
+  color: #e9f9ff;
+  /* Azul claro */
+  margin-top: 0.5rem;
+}
+
+/* ----------------------------------------- */
+/* 🎠 Contenedor principal del carrusel (centrado verticalmente) */
+/* ----------------------------------------- */
+.slide-container {
+  width: 100%;
+  max-width: 600px;
+  /* Máximo ancho */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex !important;
+  /* Centrado vertical y horizontal */
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  /* Ajusta alto según header y botón fijo */
+}
+
+/* Estilos del slider (Slick) */
+.slick-slider {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------------------------------- */
+/* 📦 Wrapper general para alinear todo verticalmente */
+/* ----------------------------------------- */
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 10px;
+  margin-top: 180px;
+  /* Separación desde el header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* Apila verticalmente */
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------- */
+/* 🃏 Estilos base para la tarjeta tipo Clash */
+/* ----------------------------------------- */
+.clash-card {
+  background: white;
+  width: 300px;
+  border-radius: 19px;
+  /* Bordes redondeados */
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+  /* Sombra inferior */
+  position: relative;
+  overflow: visible;
+  z-index: 9999;
+  margin: 0 auto;
+}
+
+/* ----------------------------------------- */
+/* 🖼️ Imagen decorativa superior en tarjeta */
+/* ----------------------------------------- */
+.clash-card__image {
+  position: relative;
+  height: 230px;
+  margin-bottom: 35px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* Fondos específicos por tipo de personaje */
+.clash-card__image--barbarian {
+  background: url("https://www.lafabricadebordados.es/3725-thickbox_default/parche-bordado-movistar-logo.jpg");
+  background-size: cover;
+  /* Cubre completamente el contenedor */
+  background-repeat: no-repeat;
+  /* No repetir */
+  background-position: center;
+  /* Centrado */
+  height: 230px;
+  /* Ajusta según tu tarjeta */
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: relative;
+}
+
+.clash-card__image--barbarian img {
+  width: 400px;
+  position: absolute;
+  top: -65px;
+  left: -70px;
+}
+
+.clash-card__image--archer {
+  background: url("https://www.lafabricadebordados.es/3727-thickbox_default/parche-bordado-movistar-logo.jpg");
+  background-size: cover;
+  /* Cubre completamente el contenedor */
+  background-repeat: no-repeat;
+  /* No repetir */
+  background-position: center;
+  /* Centrado */
+  height: 230px;
+  /* Ajusta según tu tarjeta */
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: relative;
+}
+
+.clash-card__image--archer img {
+  width: 400px;
+  position: absolute;
+  top: -34px;
+  left: -37px;
+}
+
+.clash-card__image--giant {
+  background: url("https://www.lafabricadebordados.es/3725-thickbox_default/parche-bordado-movistar-logo.jpg");
+  background-size: cover;
+  /* Cubre completamente el contenedor */
+  background-repeat: no-repeat;
+  /* No repetir */
+  background-position: center;
+  /* Centrado */
+  height: 230px;
+  /* Ajusta según tu tarjeta */
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: relative;
+}
+
+.clash-card__image--giant img {
+  width: 340px;
+  position: absolute;
+  top: -30px;
+  left: -25px;
+}
+
+.clash-card__image--goblin {
+  background: url("https://www.lafabricadebordados.es/3726-thickbox_default/parche-bordado-movistar-logo.jpg");
+  background-size: cover;
+  /* Cubre completamente el contenedor */
+  background-repeat: no-repeat;
+  /* No repetir */
+  background-position: center;
+  /* Centrado */
+  height: 230px;
+  /* Ajusta según tu tarjeta */
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: relative;
+}
+
+.clash-card__image--goblin img {
+  width: 370px;
+  position: absolute;
+  top: -21px;
+  left: -37px;
+}
+
+.clash-card__image--wizard {
+  background: url("https://www.lafabricadebordados.es/3724-thickbox_default/parche-bordado-movistar-logo.jpg");
+  background-size: cover;
+  /* Cubre completamente el contenedor */
+  background-repeat: no-repeat;
+  /* No repetir */
+  background-position: center;
+  /* Centrado */
+  height: 230px;
+  /* Ajusta según tu tarjeta */
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  position: relative;
+}
+
+.clash-card__image--wizard img {
+  width: 345px;
+  position: absolute;
+  top: -28px;
+  left: -10px;
+}
+
+/* Niveles */
+.clash-card__level {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+/* Colores por tipo */
+.clash-card__level--barbarian {
+  color: #EC9B3B;
+}
+
+.clash-card__level--archer {
+  color: #EE5487;
+}
+
+.clash-card__level--giant {
+  color: #F6901A;
+}
+
+.clash-card__level--goblin {
+  color: #82BB30;
+}
+
+.clash-card__level--wizard {
+  color: #4FACFF;
+}
+
+.clash-card__unit-name {
+  font-size: 26px;
+  color: black;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* Stats por tipo con colores y bordes personalizados */
+.clash-card__unit-stats--barbarian {
+  background: #EC9B3B;
+}
+
+.clash-card__unit-stats--barbarian .one-third {
+  border-right: 1px solid #BD7C2F;
+}
+
+.clash-card__unit-stats--archer {
+  background: #EE5487;
+}
+
+.clash-card__unit-stats--archer .one-third {
+  border-right: 1px solid #D04976;
+}
+
+.clash-card__unit-stats--giant {
+  background: #F6901A;
+}
+
+.clash-card__unit-stats--giant .one-third {
+  border-right: 1px solid #de7b09;
+}
+
+.clash-card__unit-stats--goblin {
+  background: #82BB30;
+}
+
+.clash-card__unit-stats--goblin .one-third {
+  border-right: 1px solid #71a32a;
+}
+
+.clash-card__unit-stats--wizard {
+  background: #4FACFF;
+}
+
+.clash-card__unit-stats--wizard .one-third {
+  border-right: 1px solid #309eff;
+}
+
+/* Estadísticas comunes */
+.clash-card__unit-stats {
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.clash-card__unit-stats .one-third {
+  width: 33%;
+  float: left;
+  padding: 20px 15px;
+}
+
+.clash-card__unit-stats sup {
+  position: absolute;
+  bottom: 4px;
+  font-size: 45%;
+  margin-left: 2px;
+}
+
+.clash-card__unit-stats .stat {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.clash-card__unit-stats .stat-value {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.clash-card__unit-stats .no-border {
+  border-right: none;
+}
+
+/* Limpieza de floats */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* Posición de flechas del carrusel slick */
+.slick-prev {
+  left: 100px;
+  z-index: 999;
+}
+
+.slick-next {
+  right: 100px;
+  z-index: 999;
+}
+
+/* ----------------------------------------- */
+/* 🔘 Botón fijo inferior "Volver al Inicio" */
+/* ----------------------------------------- */
+.volver-inicio {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 1.2rem);
+  /* Asegura margen seguro en iOS */
+  left: 0;
+  width: 100%;
+  background: #1eb6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #1eb6e7;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  text-decoration: none !important;
+}
+
+.btn-volver:hover {
+  background: #e6f9fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 128, 192, 0.3);
+}
+
+.icon-img {
+  width: 28px;
+  height: 28px;
+}
+
+/* === Ajustes de tamaño para .slide-container en desktop === */
+@media screen and (min-width: 1024px) {
+  .slide-container {
+    max-width: 1100px;  /* O más si necesitas más aire entre tarjetas */
+    margin: 0 auto;      /* Centra horizontalmente */
+  }
+
+  .slick-slide {
+    padding: 0 10px;     /* Separación entre tarjetas */
+  }
+}
+
+
+/* ----------------------------------------- */
+/* 📱 Estilos Responsivos: Móvil */
+/* ----------------------------------------- */
+@media screen and (max-width: 780px) {
+
+  html,
+  body {
+    height: 100vh;
+    padding-bottom: 120px;
+    overflow: hidden;
+  }
+
+  .main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 160px);
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .slide-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: -110px;
+  }
+
+  h1.titulo {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  p.subtitulo {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2em;
+    line-height: 1.4;
+    padding: 0 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .slick-track {
+    display: flex !important;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: auto !important;
+  }
+
+  /* Tarjeta 1 Fondo de la tarjeta Archer: mantiene proporciones sin recorte */
+  .clash-card__image--barbarian {
+    height: 220px;
+    background-size: 250px;
+    /* 🟢 Evita deformación */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Imagen del personaje Archer: centrada y flotando en 3D */
+  .clash-card__image--barbarian img {
+    width: 260px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 🟢 Centrado horizontal real */
+  }
+
+  /* Tarjeta 2 Fondo de la tarjeta Archer: mantiene proporciones sin recorte */
+  .clash-card__image--archer {
+    height: 220px;
+    background-size: 250px;
+    /* 🟢 Evita deformación */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Imagen del personaje Archer: centrada y flotando en 3D */
+  .clash-card__image--archer img {
+    width: 260px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 🟢 Centrado horizontal real */
+  }
+
+  /* Tarjeta 3 Fondo de la tarjeta Archer: mantiene proporciones sin recorte */
+  .clash-card__image--giant {
+    height: 220px;
+    background-size: 250px;
+    /* 🟢 Evita deformación */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Imagen del personaje Archer: centrada y flotando en 3D */
+  .clash-card__image--giant img {
+    width: 260px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 🟢 Centrado horizontal real */
+  }
+
+  /* Tarjeta 4 Fondo de la tarjeta Archer: mantiene proporciones sin recorte */
+  .clash-card__image--goblin {
+    height: 220px;
+    background-size: 250px;
+    /* 🟢 Evita deformación */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Imagen del personaje Archer: centrada y flotando en 3D */
+  .clash-card__image--goblin img {
+    width: 260px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 🟢 Centrado horizontal real */
+  }
+
+  /* Tarjeta 4 Fondo de la tarjeta Archer: mantiene proporciones sin recorte */
+  .clash-card__image--wizard {
+    height: 220px;
+    background-size: 250px;
+    /* 🟢 Evita deformación */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Imagen del personaje Archer: centrada y flotando en 3D */
+  .clash-card__image--wizard img {
+    width: 260px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 🟢 Centrado horizontal real */
+  }
+
+  .clash-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    position: relative;
+    overflow: visible;
+    /* 🔴 Permite que la imagen flote hacia fuera */
+    background-color: #fff;
+  }
+
+  .clash-card__image {
+    height: 160px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: transparent;
+  }
+
+  .clash-card__image img {
+    max-width: 275px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -35px;
+    /* 🔼 Flota más arriba aún para mayor efecto 3D */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .clash-card__unit-name {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .clash-card__unit-description {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #666;
+  }
+
+  .clash-card__unit-stats .stat {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .clash-card__unit-stats .stat-value {
+    font-size: 10px;
+  }
+
+  .clash-card__unit-stats .one-third {
+    padding: 10px 6px;
+  }
+
+  .btn-volver {
+    font-size: 1rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    background-color: white;
+    color: #1eb6e7;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 128, 192, 0.25);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-volver:hover {
+    background-color: #e0f8ff;
+    transform: translateY(-2px);
+  }
+
+  .icon-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .volver-inicio {
+    padding: 1rem 0;
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}

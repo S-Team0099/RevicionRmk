@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Reset general */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY + FONDO ===== */
+body.facturacion-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #002855;
+  padding: 0 1rem 4.5rem;
+  background-color: #1eb6e7;
+  background-position: center center;
+  overflow-x: hidden;
+}
+
+body.facturacion-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  /* top/right/bottom/left = 0 */
+  background: url("../../Img/fondo/movistar-logo.webp") no-repeat center center;
+  background-size: 30% auto;
+  z-index: -1;
+}
+
+
+/* ===== ENCABEZADO ===== */
+.header-movistar {
+  text-align: center;
+  background-color: #1eb6e7;
+  color: #fff;
+  padding: 2rem 1rem 1rem;
+  width: 100%;
+}
+
+.slogan {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #e9f9ff;
+}
+
+
+/* ===== MAIN ===== */
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===== BUSCADOR ===== */
+:root {
+  --mv-blue: #1eb6e7;
+  --dark-blue: #002855;
+  --border-blue: #004080;
+  --input-bg: #fff;
+  --input-shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* Contenedor centrado */
+.search-box {
+  max-width: 420px;
+  margin: 2rem auto 1rem;
+}
+
+/* Input con icono “incrustado” */
+#buscador {
+  width: 100%;
+  height: 48px;
+  /* controlamos la altura */
+  padding: 0 16px 0 44px;
+  /* espacio izquierdo para el icono */
+  font-size: 1rem;
+  line-height: 48px;
+  /* vertical align del texto */
+  color: var(--dark-blue);
+  background: var(--input-bg) url("../../Img/icons/calendar.svg") no-repeat 12px center;
+  background-size: 20px 20px;
+  /* tamaño del icono */
+  border: 1px solid var(--border-blue);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--input-shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  /* quita flechitas */
+}
+
+/* Elimina spin buttons Chrome/Safari */
+#buscador::-webkit-inner-spin-button,
+#buscador::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Placeholder legible y centrado */
+#buscador::placeholder {
+  color: rgba(0, 40, 80, 0.5);
+  line-height: 48px;
+}
+
+/* Hover suave */
+#buscador:hover {
+  border-color: var(--mv-blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus ring claro */
+#buscador:focus {
+  outline: none;
+  border-color: var(--mv-blue);
+  box-shadow: 0 0 0 3px rgba(30, 182, 231, 0.3);
+}
+
+
+/* ===== ALERTA ===== */
+.alerta {
+  display: none;
+  max-width: 420px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: #fff2f2;
+  border: 1px solid #e0b4b4;
+  border-radius: 8px;
+  color: #a94442;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ===== TABLA ===== */
+.table-container {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table-container thead {
+  background: #004080;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.table-container th,
+.table-container td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0e6ee;
+  word-wrap: break-word;
+}
+
+/* ===== BOTÓN VOLVER ===== */
+.volver-inicio {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 1.2rem);
+  left: 0;
+  width: 100%;
+  background: #1eb6e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  color: #1eb6e7;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  text-decoration: none !important;
+}
+
+.btn-volver:hover {
+  background: #e6f9fd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 128, 192, 0.3);
+}
+
+.icon-img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== MÓVIL (≤768px) ===== */
+@media (max-width: 768px) {
+
+  /* Hace el header más compacto reduciendo el padding superior e inferior */
+  .header-movistar {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  /* En móvil, elimina la imagen de fondo y mantiene solo el color base */
+  body.facturacion-page {
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-color: #1eb6e7;
+  }
+
+  /* Ajusta el tamaño y espacio inferior del título principal */
+  .header-movistar h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ajusta tamaño de la slogan y reduce su margen inferior */
+  .header-movistar .slogan {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Sube ligeramente todo el contenedor del buscador */
+  .search-box {
+    position: relative;
+    top: -15px;              /* desplaza el buscador 15px hacia arriba */
+    margin: 0.5rem auto 1rem;
+  }
+
+  /* Limpia cualquier transform previo y ajusta tipografía/padding */
+  #buscador {
+    transform: none;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Hace la alerta más compacta en móvil */
+  .alerta {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Ajusta el contenedor de la tabla para ocupar casi todo el ancho */
+  .table-container {
+    padding: 0 0.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Convierte cada parte de la tabla en bloques para estilo tarjeta */
+  .table-container table,
+  .table-container thead,
+  .table-container tbody,
+  .table-container th,
+  .table-container td,
+  .table-container tr {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+  }
+
+  /* Oculta el encabezado tradicional de la tabla */
+  .table-container thead {
+    display: none;
+  }
+
+  /* Estiliza cada fila como una tarjeta individual */
+  .table-container tr {
+    margin-bottom: 0px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 64, 128, 0.08);
+    border-left: 3px solid #1eb6e7;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Ajusta el padding y tipografía de cada celda */
+  .table-container td {
+    position: relative;
+    padding: 1.3rem 1rem 1.5rem 6.5rem;
+    font-size: 0.85rem;
+    color: #003366;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* Muestra la etiqueta de cada columna vía data-label */
+  .table-container td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    width: 5.8rem;
+    font-weight: 700;
+    color: #1eb6e7;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: normal;
+    text-align: left;
+  }
+
+  /* Dibuja una línea divisoria bajo cada celda excepto la última */
+  .table-container td:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 1px;
+    margin: 14px auto 0;
+    background-color: #e0e6ee;
+  }
+
+  /* Ajusta tamaño y padding del botón “Volver al Inicio” */
+  .btn-volver {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  /* Fuerza que el contenedor del botón siga fijo al viewport */
+  .volver-inicio {
+    position: fixed;                           /* Siempre pegado al viewport */
+    bottom: env(safe-area-inset-bottom, 1.2rem);
+    left: 0;
+    width: 100%;
+    transform: none;                           /* Elimina transform heredado */
+  }
+}
+
+/* Oculta el pseudo-elemento de fondo en móvil */
+@media (max-width: 768px) {
+  body.facturacion-page::before {
+    display: none !important;
+  }
+}
