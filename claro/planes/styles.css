@@ -1,529 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-/* ========== GLOBAL STYLES ========== */
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #e41c1d;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ==========================================
-=                ENCABEZADO                 =
-= Encabezado superior con color Claro       =
-========================================== */
-.header-claro {
-  text-align: center;
-  background-color: #e41c1d;
-  color: #fff;
-  padding: 2rem 1rem 1rem;
-  width: 100%;
-}
-
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  color: #d9000d;
-  margin: 30px 0 10px;
-}
-
-/* ========== CARRUSEL CONTENEDOR ========== */
-.carousel {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 0;
-  width: 100%;
-}
-
-.card-track {
-  display: block;
-}
-
-/* ========== TARJETA DE PLAN ========== */
-.plan-card {
-  width: 300px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  flex: none;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  position: relative;
-  padding-top: 40px;
-}
-
-.slick-slide {
-  display: flex !important;
-  justify-content: center;
-  align-items: stretch;
-  height: auto !important;
-}
-
-.plan-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.plan-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ========== RIBBON ========== */
-.top-banner {
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #0097a9;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 6px 7px;
-  text-align: center;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  line-height: 1.3;
-  max-width: 90%;
-  width: fit-content;
-  white-space: normal;
-  word-wrap: break-word;
-  z-index: 10;
-}
-
-.top-banner::before,
-.top-banner::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background-color: #00535d;
-  top: 0px;
-  z-index: -1;
-}
-
-.top-banner::before {
-  left: -4px;
-  border-top-right-radius: 6px;
-  transform: rotate(-90deg);
-}
-
-.top-banner::after {
-  right: -4px;
-  border-top-left-radius: 6px;
-  transform: rotate(90deg);
-}
-
-/* ========== ENCABEZADO DEL PLAN ========== */
-.plan-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  margin-top: 8px;
-  z-index: 1;
-}
-
-.plan-header img {
-  height: 20px;
-}
-
-.plan-price {
-  font-size: 22px;
-  font-weight: bold;
-  color: #222;
-}
-
-/* ========== TÍTULO DEL PLAN ========== */
-.plan-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #d90000;
-  text-align: center;
-  margin: 16px 0 8px;
-}
-
-/* ========== CARACTERÍSTICAS DEL PLAN ========== */
-.plan-features {
-  font-size: 13px;
-  color: #202020;
-  padding: 0 16px;
-}
-
-.plan-features .item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.plan-features .item:last-child {
-  border-bottom: none;
-}
-
-.plan-features .label {
-  font-size: 11px;
-  font-weight: bold;
-  color: #202020;
-}
-
-.plan-features .label2 {
-  font-size: 11px;
-  font-weight: 500;
-  color: #202020;
-}
-
-.plan-features .value {
-  font-size: 11px;
-  font-weight: 700;
-  text-align: right;
-}
-
-.plan-features .value2 {
-  font-size: 11px;
-  text-align: right;
-}
-
-.value.red {
-  color: #d9000d;
-}
-
-/* ========== ÍCONOS DE REDES SOCIALES ========== */
-.plan-icons {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-top: 4px;
-}
-
-.plan-icons img {
-  width: 18px;
-  height: 18px;
-}
-
-/* ========== SUSCRIPCIÓN Y BENEFICIOS ========== */
-.subscription-section {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 0;
-}
-
-.subscription-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
-}
-
-.info-icon {
-  font-size: 14px;
-  color: #00a3e0;
-}
-
-.subscription-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.subscription-box {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 8px 12px;
-  width: 120px;
-  text-align: center;
-  background-color: #fff;
-  line-height: 1;
-}
-
-.subscription-box div {
-  margin: 2px 0;
-}
-
-.subscription-box img {
-  max-width: 80px;
-  margin: -4px auto;
-}
-
-.subscription-title .bold {
-  font-weight: 700;
-}
-
-.subscription-includes,
-.subscription-info {
-  font-size: 9px;
-  color: #333;
-}
-
-.subscription-info {
-  margin-top: 10px !important;
-}
-
-.subscription-bottom {
-  width: fit-content;
-  margin-right: 40px;
-  margin-top: 6px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.red {
-  color: #d9000d;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.black {
-  color: #000;
-  font-size: 11px;
-  font-weight: bold;
-}
-
-.plan-benefits {
-  font-size: 11px;
-  padding: 8px 16px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-
-.benefit-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.label {
-  color: #333;
-}
-
-.claro-red {
-  color: #d9000d;
-}
-
-.bold-black {
-  color: #000;
-}
-
-.plan-legal {
-  font-size: 10px;
-  color: #777;
-  padding: 8px 16px;
-  text-align: center;
-}
-
-/* ========== BOTONES DE ACCIÓN ========== */
-.plan-actions {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 16px 16px;
-}
-
-.plan-actions a {
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.btn-ver-mas {
-  color: #d9000d;
-  border: 1px solid #d9000d;
-  padding: 6px 16px;
-  border-radius: 20px;
-  background-color: white;
-  transition: 0.2s ease-in-out;
-}
-
-.btn-ver-mas:hover {
-  background-color: #d9000d;
-  color: #fff;
-}
-
-.btn-tienda {
-  background-color: #d9000d;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.btn-tienda i {
-  font-size: 14px;
-}
-
-/* ========== MODAL ========== */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 0.1rem 1.5rem 1.5rem 1.5rem;
-  /* antes: 2rem en todos lados */
-  border-radius: 30px;
-  /* más redondo */
-  max-width: 600px;
-  /* aumentamos el ancho */
-  width: 100%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
-  font-family: "Roboto", sans-serif;
-}
-
-.modal-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1e1e1e;
-  margin-left: 25px;
-  /* Ajusta márgenes: elimina separación excesiva arriba o izquierda */
-  padding: 0;
-}
-
-.modal-body p {
-  font-size: 0.82rem !important;
-  color: #000000;
-  margin: 0 0 12px;
-  line-height: 1.6;
-}
-
-.modal-body li {
-  font-size: 0.7rem;
-  margin-bottom: 1%;
-  color: #000000;
-  line-height: 16px;
-  font-family: "Roboto", sans-serif;
-}
-
-.modal-body p strong {
-  font-weight: bold;
-}
-
-/* Botón de cierre */
-.modal .close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: none;
-  color: #746868;
-}
-
-/* Animación opcional */
-@keyframes fadeIn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-footer {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.btn-entendido {
-  display: inline-block;
-  padding: 10px 24px;
-  background-color: #e60000;
-  color: white;
-  font-weight: bold;
-  font-size: 13px;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-/* ===== BOTÓN "VOLVER AL INICIO" ===== */
-.volver-inicio {
-  margin-top: auto;
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.btn-volver {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffffff;
-  color: #e60000; /* Texto del botón en rojo */
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.btn-volver:hover {
-  background-color: #ffeaea;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(230, 0, 0, 0.3);
-}
-.icon-img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-/* ========== RESPONSIVE ========== */
-@media (max-width: 480px) {
-  .plan-card {
-    margin: 12px auto;
-    max-width: 280px;
-  }
-
-  .ribbon.recomendado,
-  .ribbon.promocion {
-    font-size: 8px;
-    width: 140px;
-  }
-
-  .plan-price {
-    font-size: 20px;
-  }
-}
-
-/* Por defecto (pantallas grandes) → ocultar elementos solo móviles */
-.mobile-only {
-  display: none;
-}
-/* ======== Estilo para móviles ======== */
+/* ======== Estilos para móviles (≤768px) ======== */
 @media (max-width: 768px) {
 
-  /* ===== Header ===== */
+  /* ===== HEADER ===== */
   .header-claro {
     padding: 10px 0 8px;
     text-align: center;
@@ -539,41 +18,53 @@ body {
     font-size: 0.9rem;
   }
 
-  /* ===== Carrusel ===== */
+  /* ===== CARRUSEL ===== */
   .carousel {
     padding: 20px 10px;
     max-width: 100%;
   }
 
-  /* ===== Contenedor de tarjetas ===== */
+  /* ===== CONTENEDOR DE TARJETAS ===== */
   .cards-container,
   .card-track {
     display: flex;
-    gap: 12px; /* espacio uniforme */
-    padding-inline: 16px; /* aire lateral */
+    gap: 1rem; /* espacio entre tarjetas */
+    padding: 0 0.5rem; /* aire lateral */
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* ===== Tarjeta individual ===== */
+  /* ===== TARJETA INDIVIDUAL ===== */
   .cards-container .card,
   .plan-card {
-    flex: 0 0 85%; /* ancho de tarjeta en móvil */
+    flex: 0 0 90%; /* ancho tarjeta en móvil */
+    margin-right: 1rem; /* separación entre tarjetas */
     scroll-snap-align: center;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
-  /* ===== Espacio lateral inicial y final ===== */
+  /* ===== ESPACIO INICIAL Y FINAL DEL CARRUSEL ===== */
   .card-track::before,
   .card-track::after {
     content: '';
-    flex: 0 0 8%;
+    flex: 0 0 0.5rem;
   }
 
-  /* ===== Ocultar scrollbar ===== */
+  /* ===== PRIMERA Y ÚLTIMA TARJETA CON MARGEN ===== */
+  .cards-container .card:first-child,
+  .plan-card:first-child {
+    margin-left: 1rem;
+  }
+
+  .cards-container .card:last-child,
+  .plan-card:last-child {
+    margin-right: 1rem;
+  }
+
+  /* ===== OCULTAR SCROLLBAR ===== */
   .cards-container::-webkit-scrollbar {
     display: none;
   }
@@ -582,7 +73,7 @@ body {
     scrollbar-width: none;
   }
 
-  /* ===== Buscador ===== */
+  /* ===== BUSCADOR ===== */
   .mobile-only {
     display: block;
   }
@@ -611,12 +102,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
 
+  /* ===== BOTÓN VOLVER ===== */
   .volver-inicio {
     position: fixed;
-    bottom: 2rem; /* o 1rem */
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0; /* eliminar espacio extra */
+    padding: 0;
     width: auto;
     z-index: 999;
   }
@@ -626,21 +118,23 @@ body {
     padding: 0.6rem 1.2rem;
     text-align: center;
   }
+
   .icon-img {
     width: 28px;
     height: 28px;
   }
-  /* ===== Subtítulo ===== */
+
+  /* ===== SUBTÍTULO ===== */
   .subtitulo-planes {
     margin-bottom: 2px;
   }
 
-  /* ===== Ocultar sección de suscripción ===== */
+  /* ===== OCULTAR SECCIÓN DE SUSCRIPCIÓN ===== */
   .subscription-section {
     display: none !important;
   }
 
-  /* ===== Modal ===== */
+  /* ===== MODAL ===== */
   .modal-content {
     max-width: 75%;
     max-height: 50vh;
@@ -662,9 +156,17 @@ body {
     padding: 0.5rem;
     text-align: center;
   }
+
+  /* ===== OCULTAR FLECHAS DEL CARRUSEL ===== */
+  .owl-next,
+  .owl-prev {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
 }
 
-/* ===== Ajustes extra para móviles pequeños (<480px) ===== */
+/* ======== Ajustes extra para móviles pequeños (≤480px) ======== */
 @media (max-width: 480px) {
   .header-claro {
     padding: 8px 0;
@@ -678,14 +180,3 @@ body {
     font-size: 0.9rem;
   }
 }
-
-/* ===== Ocultar flechas en móvil ===== */
-@media (max-width: 768px) {
-  .owl-next,
-  .owl-prev {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
-}
-
