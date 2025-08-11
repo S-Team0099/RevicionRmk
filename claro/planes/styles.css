@@ -467,7 +467,7 @@ body {
 ========================================== */
 .volver-inicio {
   position: fixed;
-  bottom: env(safe-area-inset-bottom, 1.2rem);
+  bottom: env(safe-area-inset-bottom, 2rem);
   left: 0;
   width: 100%;
   background: transparent;
@@ -700,4 +700,5 @@ body {
     opacity: 0 !important;
   }
 }
+
 
