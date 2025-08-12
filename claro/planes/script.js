@@ -1,83 +1,117 @@
 $(document).ready(function () {
-  // Ocultar todos los modales por si acaso
   $('.modal').hide();
 
-  // Inicializar slick carousel
   $('.carousel').on('init', function () {
     $(this).css('opacity', 1);
   });
 
-$('.carousel').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  infinite: false,
-  arrows: true, // flechas por defecto
-  dots: false,
-  speed: 300,
-  cssEase: 'ease-in-out',
-  swipeToSlide: true,
-  touchMove: true,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: { 
-        slidesToShow: 2,
-        arrows: true // aún con flechas en tablet
+  $('.carousel').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    arrows: true,
+    dots: false,
+    speed: 300,
+    cssEase: 'ease-in-out',
+    swipeToSlide: true,
+    touchMove: true,
+    adaptiveHeight: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          arrows: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          centerMode: false,
+          variableWidth: false,
+          infinite: false,
+          adaptiveHeight: true
+        }
       }
-    },
-    {
-      breakpoint: 768,
-      settings: { 
-        slidesToShow: 1,
-        arrows: false // 🔥 sin flechas en móvil
-      }
-    }
-  ]
-});
+    ]
+  });
 
-  // Cerrar modal con botón X o botón Entendido
   $(document).on('click', '.modal .close, .btn-entendido', function () {
     $(this).closest('.modal').fadeOut();
   });
 
-  // Cerrar modal haciendo clic fuera del contenido
   $(document).on('click', '.modal', function (e) {
     if ($(e.target).hasClass('modal')) {
       $(this).fadeOut();
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".plan-card");
-  const buscador = document.querySelector("#buscador");
+  const buscador = $("#buscador");
 
-  // Función para mostrar solo las tarjetas con el precio indicado
   function filtrarPorPrecio(precio) {
-    cards.forEach(card => {
-      if (card.dataset.precio === precio) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
+    $('.carousel').slick('slickUnfilter');
+    if (precio) {
+      $('.carousel').slick('slickFilter', function (index, slide) {
+        return $(slide).data('precio') === precio;
+      });
+    }
   }
 
-  // 1️⃣ Mostrar solo las tarjetas con precio 69.90 al iniciar
-  filtrarPorPrecio("69.90");
+  if (window.innerWidth <= 768) {
+    filtrarPorPrecio("69.90");
+  }
 
-  // 2️⃣ Filtrar mientras el usuario escribe
-  buscador.addEventListener("input", function () {
-    const valor = buscador.value
-      .trim()
-      .replace(",", "."); // para aceptar coma o punto
-
-    if (valor === "") {
-      cards.forEach(card => card.style.display = "block"); // mostrar todas si vacío
-    } else {
-      filtrarPorPrecio(valor);
-    }
+  buscador.on("input", function () {
+    const valor = $(this).val().trim().replace(",", ".");
+    filtrarPorPrecio(valor);
   });
+});
+
+$('.carousel').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: false,
+  arrows: true,
+  dots: false,
+  speed: 300,
+  cssEase: 'ease-in-out',
+  swipeToSlide: true,
+  touchMove: true,
+  adaptiveHeight: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        arrows: false // ❌ quitar flechas también aquí
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+        centerMode: false,
+        variableWidth: false,
+        infinite: false,
+        adaptiveHeight: true
+      }
+    }
+  ]
+});
+
+// Cerrar modal con botón X o botón Entendido
+$(document).on('click', '.modal .close, .btn-entendido', function () {
+  $(this).closest('.modal').fadeOut();
+});
+
+// Cerrar modal haciendo clic fuera del contenido
+$(document).on('click', '.modal', function (e) {
+  if ($(e.target).hasClass('modal')) {
+    $(this).fadeOut();
+  }
 });
 
 
